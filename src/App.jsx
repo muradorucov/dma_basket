@@ -42,8 +42,9 @@ function App() {
         />
       </div>
       <div
-        className={`fixed top-0 right-[0] left-[${left}] bottom-0 bg-[#2926269e] w-full  backdrop-blur-[10px] flex justify-end transition-[.3s]`}
+        className={`fixed top-0 right-[0] bottom-0 bg-[#2926269e] w-full  backdrop-blur-[10px] flex justify-end transition-[.3s]`}
         onClick={hideCart}
+        style={{ left: left }}
         ref={modal}
       >
         <Cart
