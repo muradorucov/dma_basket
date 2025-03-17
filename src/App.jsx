@@ -6,13 +6,13 @@ import CartIcon from "./assets/icons/cart"
 function App() {
   const [list, setList] = useState([]);
   const [val, setVal] = useState("");
-  const [right, setRight] = useState("-100%");
+  const [left, setLeft] = useState("100%");
   const modal = useRef(null)
 
 
   const hideCart = (e) => {
     if (e.target === modal.current) {
-      setRight("-100%")
+      setLeft("100%")
     }
   }
 
@@ -26,7 +26,7 @@ function App() {
           onChange={(e) => setVal(e.target.value.toLowerCase())}
         />
         <div className="relative"
-          onClick={() => setRight("0")}
+          onClick={() => setLeft("0")}
         >
           <CartIcon />
           {list.length ?
@@ -42,7 +42,7 @@ function App() {
         />
       </div>
       <div
-        className={`fixed top-0 right-[${right}] left-[${right}] bottom-0 bg-[#2926269e] w-full  backdrop-blur-[10px] flex justify-end transition-[.3s]`}
+        className={`fixed top-0 right-[0] left-[${left}] bottom-0 bg-[#2926269e] w-full  backdrop-blur-[10px] flex justify-end transition-[.3s]`}
         onClick={hideCart}
         ref={modal}
       >
